@@ -1,0 +1,13 @@
+<p [ngStyle]="
+{'backgroundColor':getbg(),
+'padding': '5px' }" [ngClass]="{'text-white':isProductAvailable,
+'text-danger':!isProductAvailable}">This Is Product
+    <strong> {{productName}} </strong> with id
+    <strong> {{productId}} </strong>and the status is {{productStatus}}
+
+    <strong *ngIf="isProductAvailable;else productNotAvail">and the product is available</strong>
+    <!-- <strong *ngIf="!isProductAvailable">and the product is not available</strong> -->
+    <ng-template #productNotAvail>
+        <strong>and Product is not available</strong>
+    </ng-template>
+</p>
